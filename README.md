@@ -23,23 +23,6 @@ The monitored target group covered **WebServer2–WebServer13 (12 Linux servers)
 | System Load | NRPE | Internal system load |
 | RAM Usage | NRPE | Internal memory utilization |
 
-## Architecture
-
-```text
-                         Nagios Core
-                      Central Monitoring
-                              |
-          +-------------------+-------------------+
-          |                                       |
-     Reachable Linux nodes                 Public-addressed nodes
-      WebServer2–WebServer8                WebServer9–WebServer13
-          |                                       |
-         NRPE                                    NRPE
-          |                                       |
-    +-----+-----+                           +-----+-----+
-    |           |                           |           |
- System Load  RAM Usage                 System Load  RAM Usage
-```
 
 The project demonstrates two monitoring layers:
 
@@ -134,25 +117,6 @@ At the final documented stage:
 
 ![NRPE troubleshooting, memory check correction, and connectivity tests](screenshots/03_nrpe_troubleshooting_and_connectivity.png)
 
-## Repository Structure
-
-```text
-Nagios-Core-Linux-Infrastructure-Monitoring/
-├── LICENSE
-├── README.md
-├── configs/
-│   ├── webserver-template.cfg
-│   └── nrpe-command-template.cfg
-├── docs/
-│   ├── Nagios_Server_Configuration_Guide.pdf
-│   └── troubleshooting.md
-├── scripts/
-│   └── setup-nrpe-client.sh
-└── screenshots/
-    ├── 01_nagios_dashboard_all_hosts_up.jpg
-    ├── 02_nagios_configuration_validation.png
-    └── 03_nrpe_troubleshooting_and_connectivity.png
-```
 
 ## Tools & Technologies
 
@@ -177,10 +141,6 @@ Nagios-Core-Linux-Infrastructure-Monitoring/
 - Network connectivity isolation
 - Configuration validation and controlled troubleshooting
 - Practical monitoring operations and documentation
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Scope
 
